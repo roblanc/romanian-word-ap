@@ -1,19 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romanian Word Speaker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Romanian Word Generator</h1>
-        <button id="wordButton">Spune Cuvânt Aleatoriu</button>
-        <div id="wordDisplay"></div>
-    </div>
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
 
-    <script src="words.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+.container {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 20px 40px; /* Increased padding */
+    font-size: 24px;     /* Increased font size */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;  /* Rounded corners */
+    cursor: pointer;
+    margin-top: 30px;    /* Increased top margin */
+    display: block;       /* Make button block-level */
+    margin-left: auto;    /* Center horizontally */
+    margin-right: auto;   /* Center horizontally */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#wordDisplay {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
