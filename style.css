@@ -47,15 +47,38 @@ button:hover {
     color: #555;
 }
 
-/* Image Styles - now displayed below text - NO ANIMATION */
+/* Image Styles - now displayed below text - HIDE INITIALLY again */
 #catImage, #alexImage, #tataImage, #mamaImage, #ohotaImage {
-    max-width: 200px;     /* Keep max width for smaller images */
-    max-height: 150px;    /* Keep max height */
+    max-width: 200px;
+    max-height: 150px;
     height: auto;
     display: block;
     margin: 20px auto 0 auto;
+    opacity: 0; /* Changed back to opacity: 0; - Initially hidden */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Keep transition if you want to re-add fade-in animation later */
+    transform: scale(0.8); /* Keep scale transform if you want to re-add fade-in animation later */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     object-fit: contain;
-    opacity: 1; /* Make images initially VISIBLE */
+}
+
+#catImage.show, #alexImage.show, #tataImage.show, #mamaImage.show, #ohotaImage.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Jump animation - still only for catImage */
+#catImage.jump {
+    animation: catJumpAnimation 0.5s ease-in-out; /* Apply jump animation */
+}
+
+@keyframes catJumpAnimation {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05); /* Slightly less jump height, less scale */
+        opacity: 1;
+    }
 }
