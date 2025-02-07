@@ -6,14 +6,6 @@ const tataImage = document.getElementById('tataImage');
 const mamaImage = document.getElementById('mamaImage');
 const ohotaImage = document.getElementById('ohotaImage');
 
-const romanianWords = [
-    "mama bebe",
-    "tata fete",
-    "Jizzy Boy Santana",
-    "alex craia",
-    "ohota ohota"
-];
-
 wordButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * romanianWords.length);
     const randomWord = romanianWords[randomIndex];
