@@ -39,3 +39,27 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
 }
+
+.button-container {
+    position: relative; /* Needed for absolute positioning of the image */
+    display: inline-block; /* Or block, depending on desired layout */
+}
+
+#catImage {
+    position: absolute; /* Position image behind the button */
+    top: 0;
+    left: 0;
+    width: 100%;      /* Image covers container width */
+    height: 100%;     /* Image covers container height */
+    object-fit: contain; /* Keep image aspect ratio, fit within container */
+    opacity: 0;        /* Initially hide the image */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animation for opacity and scale */
+    transform: scale(0.8); /* Start slightly smaller */
+    z-index: -1;        /* Place image behind the button (important!) */
+    border-radius: 10px; /* Match button border-radius */
+}
+
+#catImage.show {
+    opacity: 1;        /* Make image visible */
+    transform: scale(1); /* Scale image back to normal size */
+}
