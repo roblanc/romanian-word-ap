@@ -6,6 +6,14 @@ const tataImage = document.getElementById('tataImage');
 const mamaImage = document.getElementById('mamaImage');
 const ohotaImage = document.getElementById('ohotaImage');
 
+const romanianWords = [
+    "mama bebe",
+    "tata fete",
+    "Jizzy Boy Santana",
+    "alex craia",
+    "ohota ohota"
+];
+
 wordButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * romanianWords.length);
     const randomWord = romanianWords[randomIndex];
@@ -17,24 +25,23 @@ wordButton.addEventListener('click', () => {
     utterance.lang = 'ro-RO';
     speechSynthesis.speak(utterance);
 
-    // Reset all image sources to empty (hide all images)
-    catImage.src = "";
-    alexImage.src = "";
-    tataImage.src = "";
-    mamaImage.src = "";
-    ohotaImage.src = "";
+    // Initially hide all images using display: none;
+    catImage.style.display = 'none';
+    alexImage.style.display = 'none';
+    tataImage.style.display = 'none';
+    mamaImage.style.display = 'none';
+    ohotaImage.style.display = 'none';
 
-    // Show correct image based on word by setting its src
+    // Show correct image based on word by setting its display to 'block'
     if (randomWord === "Jizzy Boy Santana") {
-        catImage.src = "cat.jpg";
+        catImage.style.display = 'block';
     } else if (randomWord === "alex craia") {
-        alexImage.src = "alex.jpg";
+        alexImage.style.display = 'block';
     } else if (randomWord === "tata fete") {
-        tataImage.src = "tata.jpg";
+        tataImage.style.display = 'block';
     } else if (randomWord === "mama bebe") {
-        mamaImage.src = "mama.jpg";
+        mamaImage.style.display = 'block';
     } else if (randomWord === "ohota ohota") {
-        ohotaImage.src = "ohota.jpg";
+        ohotaImage.style.display = 'block';
     }
-    // For words without specific images, no image will be shown (as we reset src to "")
 });
