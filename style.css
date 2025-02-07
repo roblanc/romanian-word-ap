@@ -1,73 +1,26 @@
-body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    text-align: center;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #333;
-}
-
-button {
-    padding: 20px 40px; /* Increased padding */
-    font-size: 24px;     /* Increased font size */
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 10px;  /* Rounded corners */
-    cursor: pointer;
-    margin-top: 30px;    /* Increased top margin */
-    display: block;       /* Make button block-level */
-    margin-left: auto;    /* Center horizontally */
-    margin-right: auto;   /* Center horizontally */
-    margin-bottom: 20px; /* Add margin below button to separate from text/images */
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#wordDisplay {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 20px; /* Add margin below text to separate from images */
-}
-
-/* Image Styles - now displayed below text */
+/* Image Styles - now displayed below text - UPDATED for smaller size */
 #catImage, #alexImage, #tataImage, #mamaImage, #ohotaImage {
-    max-width: 300px;     /* Limit image width */
+    max-width: 200px;     /* Reduced max width (was 300px) */
+    max-height: 150px;    /* Added max height to limit vertical size */
     height: auto;        /* Maintain aspect ratio */
-    display: block;       /* Display images as block elements */
-    margin: 20px auto 0 auto; /* Add top margin, center horizontally */
-    opacity: 0;          /* Initially hidden */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animation */
-    transform: scale(0.8); /* Start scaled down */
-    border-radius: 8px;    /* Rounded corners for images */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+    display: block;
+    margin: 20px auto 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* Ensure images fit within max dimensions */
 }
 
 #catImage.show, #alexImage.show, #tataImage.show, #mamaImage.show, #ohotaImage.show {
-    opacity: 1;          /* Make visible for "show" animation */
-    transform: scale(1); /* Scale to normal size */
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* Jump animation - still only for catImage */
 #catImage.jump {
-    animation: catJumpAnimation 0.5s ease-in-out; /* Apply jump animation */
+    animation: catJumpAnimation 0.5s ease-in-out;
 }
 
 @keyframes catJumpAnimation {
@@ -76,7 +29,7 @@ button:hover {
         opacity: 1;
     }
     50% {
-        transform: translateY(-20px) scale(1.05); /* Slightly less jump height, less scale */
+        transform: translateY(-20px) scale(1.05);
         opacity: 1;
     }
 }
