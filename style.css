@@ -1,5 +1,5 @@
-/* CSS for alexImage (same style as catImage's default) */
-#alexImage {
+/* CSS for mamaImage (same style as alexImage, tataImage, catImage default) */
+#mamaImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,13 +13,13 @@
     border-radius: 10px;
 }
 
-#alexImage.show {
+#mamaImage.show {
     opacity: 1;
     transform: scale(1);
 }
 
-/* CSS for tataImage (same style as catImage's default) */
-#tataImage {
+/* CSS for ohotaImage (same style as alexImage, tataImage, catImage default) */
+#ohotaImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@
     border-radius: 10px;
 }
 
-#tataImage.show {
+#ohotaImage.show {
     opacity: 1;
     transform: scale(1);
 }
