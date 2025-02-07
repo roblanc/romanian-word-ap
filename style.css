@@ -32,6 +32,7 @@ button {
     display: block;       /* Make button block-level */
     margin-left: auto;    /* Center horizontally */
     margin-right: auto;   /* Center horizontally */
+    margin-bottom: 20px; /* Add margin below button to separate from text/images */
 }
 
 button:hover {
@@ -43,44 +44,39 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     color: #555;
+    margin-bottom: 20px; /* Add margin below text to separate from images */
 }
 
-.button-container {
-    position: relative; /* Needed for absolute positioning of the image */
-    display: inline-block; /* Or block, depending on desired layout */
-}
-
+/* Image Styles - now displayed below text */
 #catImage, #alexImage, #tataImage, #mamaImage, #ohotaImage {
-    position: absolute; /* Position image behind the button */
-    top: 0;
-    left: 0;
-    width: 100%;      /* Image covers container width */
-    height: 100%;     /* Image covers container height */
-    object-fit: contain; /* Keep image aspect ratio, fit within container */
-    opacity: 0;        /* Initially hide the image */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animation for opacity and scale */
-    transform: scale(0.8); /* Start slightly smaller */
-    z-index: -1;        /* Place image behind the button (important!) */
-    border-radius: 10px; /* Match button border-radius */
+    max-width: 300px;     /* Limit image width */
+    height: auto;        /* Maintain aspect ratio */
+    display: block;       /* Display images as block elements */
+    margin: 20px auto 0 auto; /* Add top margin, center horizontally */
+    opacity: 0;          /* Initially hidden */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animation */
+    transform: scale(0.8); /* Start scaled down */
+    border-radius: 8px;    /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
 }
 
 #catImage.show, #alexImage.show, #tataImage.show, #mamaImage.show, #ohotaImage.show {
-    opacity: 1;        /* Make image visible */
-    transform: scale(1); /* Scale image back to normal size */
+    opacity: 1;          /* Make visible for "show" animation */
+    transform: scale(1); /* Scale to normal size */
 }
 
-/* New CSS for jump animation - only for catImage */
+/* Jump animation - still only for catImage */
 #catImage.jump {
     animation: catJumpAnimation 0.5s ease-in-out; /* Apply jump animation */
 }
 
 @keyframes catJumpAnimation {
     0%, 100% {
-        transform: translateY(0) scale(1); /* Start and end at normal position */
-        opacity: 1; /* Fully visible */
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-30px) scale(1.1); /* Jump up and scale slightly */
-        opacity: 1; /* Fully visible */
+        transform: translateY(-20px) scale(1.05); /* Slightly less jump height, less scale */
+        opacity: 1;
     }
 }
