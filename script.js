@@ -1,6 +1,8 @@
 const wordButton = document.getElementById('wordButton');
 const wordDisplay = document.getElementById('wordDisplay');
 const catImage = document.getElementById('catImage');
+const alexImage = document.getElementById('alexImage');
+const tataImage = document.getElementById('tataImage');
 
 wordButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * romanianWords.length);
@@ -13,23 +15,38 @@ wordButton.addEventListener('click', () => {
     utterance.lang = 'ro-RO';
     speechSynthesis.speak(utterance);
 
-    // Image animation logic
+    // Image animation logic based on word
+    catImage.classList.remove('show', 'jump'); // Ensure cat image classes are removed
+    alexImage.classList.remove('show');        // Ensure alex image class is removed
+    tataImage.classList.remove('show');        // Ensure tata image class is removed
+
     if (randomWord === "Jizzy Boy Santana") {
-        // Trigger jump animation for "Jizzy Boy Santana"
-        catImage.classList.remove('show'); // Ensure 'show' class is removed
-        catImage.classList.add('jump');   // Add 'jump' class
+        catImage.classList.add('jump');   // Jump animation for cat
 
         setTimeout(() => {
-            catImage.classList.remove('jump'); // Remove 'jump' class after animation
-        }, 500); // Match animation duration (0.5s)
+            catImage.classList.remove('jump');
+        }, 500);
+
+    } else if (randomWord === "alex craia") {
+        alexImage.classList.add('show');   // Show animation for alex
+
+        setTimeout(() => {
+            alexImage.classList.remove('show');
+        }, 500);
+
+    } else if (randomWord === "tata fete") {
+        tataImage.classList.add('show');   // Show animation for tata
+
+        setTimeout(() => {
+            tataImage.classList.remove('show');
+        }, 500);
 
     } else {
-        // For other words, use the regular "show" animation
-        catImage.classList.remove('jump');  // Ensure 'jump' class is removed
-        catImage.classList.add('show');   // Add 'show' class
+        // Default to cat image show animation for other words (or no image)
+        catImage.classList.add('show');   // Show animation for cat
 
         setTimeout(() => {
-            catImage.classList.remove('show'); // Remove 'show' class after animation
-        }, 500); // Keep same duration as jump animation for consistency
+            catImage.classList.remove('show');
+        }, 500);
     }
 });
