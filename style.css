@@ -63,3 +63,19 @@ button:hover {
     opacity: 1;        /* Make image visible */
     transform: scale(1); /* Scale image back to normal size */
 }
+
+/* New CSS for jump animation */
+#catImage.jump {
+    animation: catJumpAnimation 0.5s ease-in-out; /* Apply jump animation */
+}
+
+@keyframes catJumpAnimation {
+    0%, 100% {
+        transform: translateY(0) scale(1); /* Start and end at normal position */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1); /* Jump up and scale slightly */
+        opacity: 1; /* Fully visible */
+    }
+}
