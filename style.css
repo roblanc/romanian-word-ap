@@ -21,18 +21,18 @@ h1 {
 }
 
 button {
-    padding: 20px 40px; /* Increased padding */
-    font-size: 24px;     /* Increased font size */
+    padding: 20px 40px;
+    font-size: 24px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 10px;  /* Rounded corners */
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 30px;    /* Increased top margin */
-    display: block;       /* Make button block-level */
-    margin-left: auto;    /* Center horizontally */
-    margin-right: auto;   /* Center horizontally */
-    margin-bottom: 20px; /* Add margin below button to separate from text/images */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button:hover {
@@ -41,44 +41,21 @@ button:hover {
 
 #wordDisplay {
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
     font-weight: bold;
     color: #555;
-    margin-bottom: 20px; /* Add margin below text to separate from images */
 }
 
-/* Image Styles - now displayed below text - UPDATED for smaller size */
+/* Image Styles - now displayed below text - NO ANIMATION */
 #catImage, #alexImage, #tataImage, #mamaImage, #ohotaImage {
-    max-width: 200px;     /* Reduced max width (was 300px) */
-    max-height: 150px;    /* Added max height to limit vertical size */
-    height: auto;        /* Maintain aspect ratio */
+    max-width: 200px;     /* Keep max width for smaller images */
+    max-height: 150px;    /* Keep max height */
+    height: auto;
     display: block;
     margin: 20px auto 0 auto;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform: scale(0.8);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: contain; /* Ensure images fit within max dimensions */
-}
-
-#catImage.show, #alexImage.show, #tataImage.show, #mamaImage.show, #ohotaImage.show {
-    opacity: 1;        /* Make image visible */
-    transform: scale(1); /* Scale to normal size */
-}
-
-/* Jump animation - still only for catImage */
-#catImage.jump {
-    animation: catJumpAnimation 0.5s ease-in-out; /* Apply jump animation */
-}
-
-@keyframes catJumpAnimation {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-20px) scale(1.05); /* Slightly less jump height, less scale */
-        opacity: 1;
-    }
+    object-fit: contain;
+    opacity: 1; /* Make images initially VISIBLE */
 }

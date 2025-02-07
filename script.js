@@ -25,43 +25,24 @@ wordButton.addEventListener('click', () => {
     utterance.lang = 'ro-RO';
     speechSynthesis.speak(utterance);
 
-    // Reset all image classes
-    catImage.classList.remove('show', 'jump');
-    alexImage.classList.remove('show');
-    tataImage.classList.remove('show');
-    mamaImage.classList.remove('show');
-    ohotaImage.classList.remove('show');
+    // Reset all image sources to empty (hide all images)
+    catImage.src = "";
+    alexImage.src = "";
+    tataImage.src = "";
+    mamaImage.src = "";
+    ohotaImage.src = "";
 
-    // Image animation logic based on word
+    // Show correct image based on word by setting its src
     if (randomWord === "Jizzy Boy Santana") {
-        catImage.classList.add('jump');
-        setTimeout(() => {
-            catImage.classList.remove('jump');
-        }, 2000); // Changed to 2000ms (2 seconds)
-
+        catImage.src = "cat.jpg";
     } else if (randomWord === "alex craia") {
-        alexImage.classList.add('show');
-        setTimeout(() => {
-            alexImage.classList.remove('show');
-        }, 2000); // Changed to 2000ms
-
+        alexImage.src = "alex.jpg";
     } else if (randomWord === "tata fete") {
-        tataImage.classList.add('show');
-        setTimeout(() => {
-            tataImage.classList.remove('show');
-        }, 2000); // Changed to 2000ms
-
+        tataImage.src = "tata.jpg";
     } else if (randomWord === "mama bebe") {
-        mamaImage.classList.add('show');
-        setTimeout(() => {
-            mamaImage.classList.remove('show');
-        }, 2000); // Changed to 2000ms
-
+        mamaImage.src = "mama.jpg";
     } else if (randomWord === "ohota ohota") {
-        ohotaImage.classList.add('show');
-        setTimeout(() => {
-            ohotaImage.classList.remove('show');
-        }, 2000); // Changed to 2000ms
+        ohotaImage.src = "ohota.jpg";
     }
-    // No 'else' needed now, as we handle all words explicitly
+    // For words without specific images, no image will be shown (as we reset src to "")
 });
